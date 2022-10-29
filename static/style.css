@@ -1,0 +1,26 @@
+.btn-primary {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.btn-primary:hover {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.page-item.active .page-link {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.page-link {
+  color: #FF0000;
+}
+
+.page-link:hover {
+  color: #FF0000;
+}
+
+a, a:hover {
+  color: #FF0000;
+}

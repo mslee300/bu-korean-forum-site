@@ -1,4 +1,4 @@
-run = "python manage.py runserver"
+run = "python manage.py runserver 0.0.0.0:3000"
 
 # The primary language of the repl. There can be others, though!
 language = "python3"
