@@ -1,26 +1,72 @@
 .btn-primary {
-  background-color: #FF0000;
-  border-color: #FF0000;
+  background-color: #4ADAC4;
+  border-color: #4ADAC4;
 }
 
 .btn-primary:hover {
-  background-color: #FF0000;
-  border-color: #FF0000;
+  background-color: #4ADAC4;
+  border-color: #4ADAC4;
 }
 
 .page-item.active .page-link {
-  background-color: #FF0000;
-  border-color: #FF0000;
+  background-color: #4ADAC4;
+  border-color: #4ADAC4;
 }
 
 .page-link {
-  color: #FF0000;
+  color: #4ADAC4;
 }
 
 .page-link:hover {
-  color: #FF0000;
+  color: #4ADAC4;
 }
 
-a, a:hover {
-  color: #FF0000;
+a {
+  color: #212529;
+  text-decoration: none;
 }
+
+a:hover {
+  color: #4ADAC4;
+  text-decoration: none;
+}
+
+#table-color {
+  background-color: #FFFFFF;
+  border: 2px solid #DEE2E6;
+  color: #b1b5b9;
+  font-weight: 100;
+}
+
+.table {
+  border-left: 1px;
+  border-right: 1px;
+}
+
+
+
+.text-center {
+/*   border: none; */
+}
+
+#btn_search {
+  color: #4ADAC4;
+  border-color: #4ADAC4;
+}
+
+#btn_search:hover {
+  color: #ffffff;
+  border-color: #4ADAC4;
+  background-color: #4ADAC4;
+}
+
+.navbar-brand {
+  margin-left: 1rem;
+}
+
+/* .table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: #FFFFFF;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+} */

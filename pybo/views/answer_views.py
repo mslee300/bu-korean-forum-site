@@ -8,7 +8,7 @@ from pybo.forms import AnswerForm
 from pybo.models import Question, Answer
 
 
-@login_required(login_url='common:login')
+# @login_required(login_url='common:login')
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.method == "POST":
@@ -27,7 +27,7 @@ def answer_create(request, question_id):
     return render(request, 'pybo/question_detail.html', context)
 
 
-@login_required(login_url='common:login')
+# @login_required(login_url='common:login')
 def answer_modify(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
@@ -47,7 +47,7 @@ def answer_modify(request, answer_id):
     return render(request, 'pybo/answer_form.html', context)
 
 
-@login_required(login_url='common:login')
+# @login_required(login_url='common:login')
 def answer_delete(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
@@ -57,7 +57,7 @@ def answer_delete(request, answer_id):
     return redirect('pybo:detail', question_id=answer.question.id)
 
 
-@login_required(login_url='common:login')
+# @login_required(login_url='common:login')
 def answer_vote(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user == answer.author:
