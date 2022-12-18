@@ -27,7 +27,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
   'budoolgi.ithosting.repl.co',
   '13f3c8ca-5165-4b05-bb72-2cbb812ac7ee.id.repl.co',
-  'lonessum-community.ithosting.repl.co'
+  'lonessum-community.ithosting.repl.co',
+  'bu.lonessum.com'
 ]
 
 # Application definition
@@ -133,5 +134,5 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CSRF_TRUSTED_ORIGINS = [
-  'https://*.budoolgi.ithosting.repl.co', 'https://*.127.0.0.1'
+  'https://lonessum-community.ithosting.repl.co', 'https://*.127.0.0.1', 'https://bu.lonessum.com'
 ]

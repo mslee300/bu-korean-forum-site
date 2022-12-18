@@ -7,6 +7,9 @@ from django.utils import timezone
 from pybo.forms import AnswerForm
 from pybo.models import Question, Answer
 
+from django.contrib.auth.models import User #관리자 권한 부여
+user = User.objects.get(username='admin') # 관리자 권한 부여
+
 
 # @login_required(login_url='common:login')
 def answer_create(request, question_id):
@@ -15,7 +18,7 @@ def answer_create(request, question_id):
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save(commit=False)
-            answer.author = request.user  # author 속성에 로그인 계정 저장
+            answer.author = user  # author 속성에 로그인 계정 저장
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
@@ -57,7 +60,7 @@ def answer_delete(request, answer_id):
     return redirect('pybo:detail', question_id=answer.question.id)
 
 
-# @login_required(login_url='common:login')
+@login_required(login_url='common:login')
 def answer_vote(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user == answer.author:
