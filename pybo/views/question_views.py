@@ -18,8 +18,62 @@ def question_create(request):
             question = form.save(commit=False)
             question.author = user  # author 속성에 로그인 계정 저장
             question.create_date = timezone.now()
+          
+            question.type = "free"  # type 속성 추가
+          
             question.save()
-            return redirect('pybo:index')
+            return redirect('/')
+    else:
+        form = QuestionForm()
+    context = {'form': form}
+    return render(request, 'pybo/question_form.html', context)
+
+def question_create_2(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author = user  # author 속성에 로그인 계정 저장
+            question.create_date = timezone.now()
+          
+            question.type = "info"  # type 속성 추가
+          
+            question.save()
+            return redirect('/pybo/info')
+    else:
+        form = QuestionForm()
+    context = {'form': form}
+    return render(request, 'pybo/question_form.html', context)
+
+def question_create_3(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author = user  # author 속성에 로그인 계정 저장
+            question.create_date = timezone.now()
+          
+            question.type = "pr"  # type 속성 추가
+          
+            question.save()
+            return redirect('/pybo/pr')
+    else:
+        form = QuestionForm()
+    context = {'form': form}
+    return render(request, 'pybo/question_form.html', context)
+
+def question_create_4(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author = user  # author 속성에 로그인 계정 저장
+            question.create_date = timezone.now()
+          
+            question.type = "sale"  # type 속성 추가
+          
+            question.save()
+            return redirect('/pybo/sale')
     else:
         form = QuestionForm()
     context = {'form': form}

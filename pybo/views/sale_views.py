@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from pybo.models import Question
 
 
-typefield = 'free'
+typefield = 'sale'
 
 
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
     question_list = Question.objects.order_by('-create_date')
   
     question_list = question_list.filter(
-      Q(type__icontains=typefield) # 게시글 타입이 'free'인지 확인
+      Q(type__icontains=typefield) # 게시글 타입이 'info'인지 확인
     ).distinct()
   
     if kw:
@@ -28,7 +28,7 @@ def index(request):
     paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
     context = {'question_list': page_obj, 'page': page, 'kw': kw}
-    return render(request, 'pybo/question_list.html', context)
+    return render(request, 'pybo/question_list_sale.html', context)
 
 
 def detail(request, question_id):
