@@ -56,7 +56,7 @@
         {% if question_list.has_previous %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.previous_page_number }}"
-               href="javascript:void(0)">이전</a>
+               href="?kw=&page={{ question_list.previous_page_number }}">이전</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -70,12 +70,12 @@
         {% if page_number == question_list.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" data-page="{{ page_number }}"
-               href="javascript:void(0)">{{ page_number }}</a>
+               href="?kw=&page={{ page_number }}">{{ page_number }}</a>
         </li>
         {% else %}
         <li class="page-item">
             <a class="page-link" data-page="{{ page_number }}"
-               href="javascript:void(0)">{{ page_number }}</a>
+               href="?kw=&page={{ page_number }}">{{ page_number }}</a>
         </li>
         {% endif %}
         {% endif %}
@@ -84,7 +84,7 @@
         {% if question_list.has_next %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.next_page_number }}"
-               href="javascript:void(0)">다음</a>
+               href="?kw=&page={{ question_list.next_page_number }}">다음</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -96,7 +96,6 @@
     <!-- 페이징처리 끝 -->
 </div>
 <form id="searchForm" method="get" action="{% url 'index' %}">
-  {% csrf_token %}
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>

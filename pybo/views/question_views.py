@@ -39,7 +39,7 @@ def question_create_2(request):
             question.type = "info"  # type 속성 추가
           
             question.save()
-            return redirect('/pybo/info')
+            return redirect('/bu/info')
     else:
         form = QuestionForm()
     context = {'form': form}
@@ -56,7 +56,7 @@ def question_create_3(request):
             question.type = "pr"  # type 속성 추가
           
             question.save()
-            return redirect('/pybo/pr')
+            return redirect('/bu/pr')
     else:
         form = QuestionForm()
     context = {'form': form}
@@ -73,7 +73,7 @@ def question_create_4(request):
             question.type = "sale"  # type 속성 추가
           
             question.save()
-            return redirect('/pybo/sale')
+            return redirect('/bu/sale')
     else:
         form = QuestionForm()
     context = {'form': form}

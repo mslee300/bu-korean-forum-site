@@ -70,7 +70,7 @@
         {% if page_number == question_list.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" data-page="{{ page_number }}"
-               href="javascript:void(0)">{{ page_number }}</a>
+               href="">{{ page_number }}</a>
         </li>
         {% else %}
         <li class="page-item">
@@ -96,7 +96,6 @@
     <!-- 페이징처리 끝 -->
 </div>
 <form id="searchForm" method="get" action="{% url 'index' %}">
-  {% csrf_token %}
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>
