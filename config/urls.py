@@ -10,5 +10,6 @@ urlpatterns = [
     path('bu/', include('pybo.urls')),
     path('common/', include('common.urls')),
     path('', base_views.index, name='index'),  # '/' 에 해당되는 path
+    path('', include('pwa.urls')),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'))),
 ]
