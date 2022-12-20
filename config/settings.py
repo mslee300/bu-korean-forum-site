@@ -40,6 +40,7 @@ INSTALLED_APPS = [
   'django.contrib.contenttypes',
   'django.contrib.sessions',
   'django.contrib.messages',
+  'pwa',
   'django.contrib.staticfiles',
 ]
 
@@ -135,3 +136,37 @@ LOGOUT_REDIRECT_URL = '/'
 CSRF_TRUSTED_ORIGINS = [
   'https://lonessum-community.ithosting.repl.co', 'https://talk.lonessum.com'
 ]
+
+# Django PWA
+PWA_APP_NAME = '외딴톡'
+PWA_APP_DESCRIPTION = "외딴톡 - 1등 유학생 게시판"
+PWA_APP_THEME_COLOR = '#4ADACA'
+PWA_APP_BACKGROUND_COLOR = '#4ADACA'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/img/icon.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/img/icon.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/img/splash.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+# Disable the the console.log on browser
+PWA_APP_DEBUG_MODE = False
