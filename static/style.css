@@ -67,10 +67,21 @@ a:hover {
   color: #4ADAC4 !important;
 }
 
+td {
+  color: #B1B5B9
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("img/menu-icon.svg");
+}
+
 @media only screen and (max-device-width: 480px) {
   
 .navbar-brand {
   margin-left: 0;
 }
-  
+
+td {
+  color: #B1B5B9
 }
+  
