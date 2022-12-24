@@ -7,18 +7,18 @@ from django.utils import timezone
 from pybo.forms import AnswerForm
 from pybo.models import Question, Answer
 
-from django.contrib.auth.models import User #관리자 권한 부여
-user = User.objects.get(username='admin') # 관리자 권한 부여
+# from django.contrib.auth.models import User #관리자 권한 부여
+# user = User.objects.get(username='admin') # 관리자 권한 부여
 
 
-# @login_required(login_url='common:login')
+@login_required(login_url='common:login')
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.method == "POST":
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save(commit=False)
-            answer.author = user  # author 속성에 로그인 계정 저장
+            answer.author = request.user
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
@@ -30,7 +30,7 @@ def answer_create(request, question_id):
     return render(request, 'pybo/question_detail.html', context)
 
 
-# @login_required(login_url='common:login')
+@login_required(login_url='common:login')
 def answer_modify(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:
@@ -50,7 +50,7 @@ def answer_modify(request, answer_id):
     return render(request, 'pybo/answer_form.html', context)
 
 
-# @login_required(login_url='common:login')
+@login_required(login_url='common:login')
 def answer_delete(request, answer_id):
     answer = get_object_or_404(Answer, pk=answer_id)
     if request.user != answer.author:

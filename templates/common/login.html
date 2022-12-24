@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container my-3">
+<div class="container login-box">
     <form method="post" action="{% url 'common:login' %}">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">  <!-- 로그인 성공후 이동되는 URL -->
         {% include "form_errors.html" %}
-        <div class="mb-3">
-            <label for="username">사용자ID</label>
-            <input type="text" class="form-control" name="username" id="username"
+        <h1 class="intro-logo"></h1>
+        <div class="login-margin">
+<!--             <label for="username">학교메일</label> -->
+            <input type="text" class="form-control-id" name="username" id="username" placeholder="아이디"
                    value="{{ form.username.value|default_if_none:'' }}">
         </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" class="form-control" name="password" id="password"
+        <div class="login-margin">
+<!--             <label for="password">비밀번호</label> -->
+            <input type="password" class="form-control-id" name="password" id="password" placeholder="비밀번호"
                    value="{{ form.password.value|default_if_none:'' }}">
         </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
+        <div class="login-margin">
+          <button type="submit" class="login-btn btn-login">로그인</button>
+        </div>
+        <p class="register">외딴톡에 처음이신가요? <a href="/common/signup">회원가입</a></p>
     </form>
 </div>
 {% endblock %}

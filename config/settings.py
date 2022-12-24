@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# PWA_SERVICE_WORKER_PATH = BASE_DIR / 'js/serviceworker.js'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -40,8 +42,8 @@ INSTALLED_APPS = [
   'django.contrib.contenttypes',
   'django.contrib.sessions',
   'django.contrib.messages',
-  'pwa',
   'django.contrib.staticfiles',
+  'pwa',
 ]
 
 MIDDLEWARE = [
@@ -150,13 +152,13 @@ PWA_APP_STATUS_BAR_COLOR = 'default'
 PWA_APP_ICONS = [
     {
         'src': '/static/img/icon.png',
-        'sizes': '160x160'
+        'sizes': '512x512'
     }
 ]
 PWA_APP_ICONS_APPLE = [
     {
         'src': '/static/img/icon.png',
-        'sizes': '160x160'
+        'sizes': '512x512'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [
@@ -168,5 +170,3 @@ PWA_APP_SPLASH_SCREEN = [
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
-# Disable the the console.log on browser
-PWA_APP_DEBUG_MODE = False

@@ -2,6 +2,8 @@
 <!doctype html>
 <html lang="ko">
 {% load pwa %}
+{% progressive_web_app_meta %}
+<!-- <link rel="manifest" href="manifest.json"> -->
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGQ292PETX"></script>
@@ -21,7 +23,6 @@
     <!-- pybo CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title> 외딴톡 - 유학생 커뮤니티 (BU) </title>
-    {% progressive_web_app_meta %}
 </head>
 <body>
 <!-- 네비게이션바 -->
