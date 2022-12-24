@@ -50,7 +50,7 @@
                 </li>
                 <li class="nav-item">
                 {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+                <a class="nav-link" href="{% url 'common:logout' %}"> 로그아웃</a>
                 {% endif %}
                 </li>
             </ul>

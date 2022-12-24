@@ -182,6 +182,13 @@ td {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.errorlist {
+  margin-bottom: 5px;
 }
 
 .input-label {
@@ -218,7 +225,12 @@ td {
   color: #B1B5B9
 }
 
-.form-control-id {
+/* .form-control-id {
   width: 90%;
+} */
+
+/* .mb-3 {
+    margin-bottom: 5px;
+} */
+
 }
-  
