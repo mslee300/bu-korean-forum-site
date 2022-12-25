@@ -27,9 +27,11 @@ SECRET_KEY = 'django-insecure-%(m4+u+7qh8-vf=04@jx3)=kz)$62wmnkx3*_%ppn(otje832m
 DEBUG = True
 
 ALLOWED_HOSTS = [
+  'lonetalk.com',
+  'talk.jpduct.co.kr',
   'lonessum-community.ithosting.repl.co',
-  'talk.lonessum.com',
-  '13f3c8ca-5165-4b05-bb72-2cbb812ac7ee.id.repl.co'
+  '13f3c8ca-5165-4b05-bb72-2cbb812ac7ee.id.repl.co',
+  '10.12.15.194'
 ]
 
 # Application definition
@@ -136,7 +138,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CSRF_TRUSTED_ORIGINS = [
-  'https://lonessum-community.ithosting.repl.co', 'https://talk.lonessum.com'
+'https://lonetalk.com',
+'https://lonessum-community.ithosting.repl.co', 'https://talk.lonessum.com',
+'https://talk.jpduct.co.kr'
 ]
 
 # Django PWA

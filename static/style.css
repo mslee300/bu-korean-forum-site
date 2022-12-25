@@ -43,6 +43,10 @@ button, input[type="submit"], input[type="reset"] {
     display: block;
 }
 
+.icons {
+  margin-left: 5px;
+  width: 12px;
+}
 
 .page-item.active .page-link {
   background-color: #4ADAC4;
@@ -99,8 +103,22 @@ a:hover {
   border-bottom-left-radius: 0;
 }
 
-.text-success {
-  color: #4ADAC4 !important;
+p.text-success {
+  color: #0CA5AF !important;
+}
+
+.subtext {
+  color: #a6a6a6;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.text-voter {
+  color: #c62917!important;
+}
+
+.mx-2 {
+    margin-right: 0!important;
 }
 
 td {

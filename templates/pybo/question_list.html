@@ -19,9 +19,9 @@
         <thead>
         <tr id="table-color" class="text-center">
 <!--             <th>#</th> -->
-            <th style="width:65%">제목</th>
+<!--             <th style="width:65%">제목</th> -->
 <!--             <th>글쓴이</th> -->
-            <th>작성일시</th>
+<!--             <th>작성일시</th> -->
         </tr>
         </thead>
         <tbody>
@@ -35,9 +35,13 @@
           -->
             <td class="text-start">
                 <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
-                {% if question.answer_set.count > 0 %}
-                <span class="text-success small mx-2">{{ question.answer_set.count }}</span>
-                {% endif %}
+                <p class="subtext">{{ question.content }}</p>
+                <img src="/static/img/vote.png" class="icons">
+                <span class="text-voter small">{{ question.voter.count }}</span>
+              
+                <img src="/static/img/comment.png" width="12" class="icons">
+                <span class="text-success small">{{ question.answer_set.count }}</span>
+              
             </td>
 <!--             <td>{{ question.author.username }}</td> -->
             <td>{{ question.create_date|date:"y/m/d G:i" }}</td>
