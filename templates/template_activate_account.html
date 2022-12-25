@@ -1,0 +1,8 @@
+{% autoescape off %}
+안녕하세요,
+외딴톡을 이용해 주셔서 진심으로 감사드립니다.
+아래 링크를 클릭하여 회원가입을 완료해 주세요,
+감사합니다.
+
+https://{{ domain }}{% url 'common:activate' uidb64=uid token=token %}
+{% endautoescape %}

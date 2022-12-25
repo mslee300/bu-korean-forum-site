@@ -187,6 +187,16 @@ td {
   padding-bottom: 5px;
 }
 
+.alert-success {
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .errorlist {
   margin-bottom: 5px;
 }

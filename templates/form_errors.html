@@ -15,3 +15,14 @@
     {% endfor %}
 </div>
 {% endif %}
+
+<!-- Alert users to check their e-mail after sign-up -->
+{% if messages %}
+<ul class="alert alert-success">
+    {% for message in messages %}
+    <div>
+    {{ message }}
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}
