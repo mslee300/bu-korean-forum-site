@@ -8,11 +8,31 @@
   border-color: #4ADAC4;
 }
 
+.btn-primary-main {
+  background-color: #F9F9F9;
+  border-color: #D5D5D5;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 120px;
+  font-weight: 700;
+  color: #373737;
+  z-index: 1000;
+}
+
 .btn-login {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
   color: white;
 }
+
+/* .outer {
+  margin: 0 auto;
+} */
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -107,10 +127,24 @@ p.text-success {
   color: #0CA5AF !important;
 }
 
+p.subject {
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  width: 280px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .subtext {
-  color: #a6a6a6;
+  color: #5B5B5D;
   font-size: 14px;
   margin-bottom: 5px;
+  overflow:hidden;
+  width: 300px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 0;
 }
 
 .text-voter {
@@ -122,11 +156,62 @@ p.text-success {
 }
 
 td {
-  color: #B1B5B9
+  color: #B1B5B9;
 }
 
-.navbar-light .navbar-toggler-icon {
+p.time {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* .navbar-light .navbar-toggler-icon {
   background-image: url("img/menu-icon.svg");
+} */
+
+
+.search-bar {
+  float: right;
+  width: 40%;
+}
+
+.forum-menu {
+  display: inline;
+  padding: 0;
+}
+
+.menu-space {
+  padding-bottom: 10px;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+  margin-left: 0; 
+  padding-left: 0.5rem;
+/*   padding-left: 1rem; */
+}
+
+/* .create-button {
+  position: fixed;
+  margin: auto;
+  width: 50%;
+  left: 50%;
+  bottom: 24px;
+  top: auto;
+  left: auto;
+  z-index: 1000;
+} */
+
+.menu-space-top {
+  padding-top: 10px;
+}
+
+.menu-nav {
+  color: #A6A6A5;
+  font-size: 22px;
+/*   padding: 0.5rem; */
 }
 
 .form-control-id {
@@ -195,6 +280,12 @@ td {
   font-weight: bold;
 }
 
+.bold-navtext {
+  padding-bottom: 3px; 
+  border-bottom: 3px solid #4ADAC4; 
+  font-weight: 500;
+}
+
 .alert-danger {
   width: 360px;
   margin-left: auto;
@@ -246,7 +337,7 @@ td {
 @media only screen and (max-device-width: 480px) {
   
 .navbar-brand {
-  margin-left: 0;
+  margin-left: 7px;
 }
 
 td {
@@ -259,6 +350,24 @@ td {
 
 .mb-3 {
     margin-bottom: 5px !important;
+}
+
+.border-bottom {
+    border-bottom: none !important;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.btn-primary-main {
+  bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 120px;
+  font-weight: 700;
+  color: #373737;
 }
 
 }

@@ -9,6 +9,7 @@ from pybo.models import Question
 # from django.contrib.auth.models import User #관리자 권한 부여
 # user = User.objects.get(username='admin') # 관리자 권한 부여
 
+  
 
 @login_required(login_url='common:login')
 def question_create(request):

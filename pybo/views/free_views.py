@@ -14,9 +14,9 @@ def index(request):
     kw = request.GET.get('kw', '')  # 검색어
     question_list = Question.objects.order_by('-create_date')
   
-    # question_list = question_list.filter(
-    #   Q(type__icontains=typefield) # 게시글 타입이 'free'인지 확인
-    # ).distinct()
+    question_list = question_list.filter(
+      Q(type__icontains=typefield) # 게시글 타입이 'free'인지 확인
+    ).distinct()
   
     if kw:
         question_list = Question.objects.order_by('-create_date')
@@ -30,7 +30,7 @@ def index(request):
     paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
     context = {'question_list': page_obj, 'page': page, 'kw': kw}
-    return render(request, 'pybo/question_list.html', context)
+    return render(request, 'pybo/question_list_free.html', context)
 
 
 def detail(request, question_id):
