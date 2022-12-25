@@ -5,7 +5,7 @@
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">  <!-- 로그인 성공후 이동되는 URL -->
         {% include "form_errors.html" %}
-        <h1 class="intro-logo"></h1>
+        <a href="/"><h1 class="intro-logo"></h1></a>
         <div class="login-margin">
 <!--             <label for="username">학교메일</label> -->
             <input type="text" class="form-control-id" name="username" id="username" placeholder="아이디"

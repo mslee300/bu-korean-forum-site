@@ -4,7 +4,7 @@
     <form method="post" action="{% url 'common:signup' %}">
         {% csrf_token %}
         {% include "form_errors.html" %}
-        <h1 class="intro-logo-signup"></h1>
+        <a href="/common/signup"><h1 class="intro-logo-signup"></h1></a>
         <div class="mb-3">
             <p class="input-label">학교메일</p>
             <input type="text" class="form-control-id" name="email" id="email"
