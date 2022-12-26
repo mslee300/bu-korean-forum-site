@@ -1,3 +1,17 @@
+body {
+  margin-top: 57px;
+}
+
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .btn-primary {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
@@ -30,11 +44,31 @@
   color: white;
 }
 
+h2.border-bottom {
+  border-bottom: none !important;
+}
+
+.card-body-custom {
+  flex: 1 1 auto;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dee2e6!important;
+}
+
+#content.form-control{
+  line-height: 0.5;
+  border-radius: 10px;
+}
+
+.py-2-custom {
+  padding-top: .5rem!important;
+  padding-bottom: 0.5rem!important;
+}
+
 /* .outer {
   margin: 0 auto;
 } */
 
-button, input[type="submit"], input[type="reset"] {
+/* input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
 	border: none;
@@ -42,7 +76,7 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-}
+} */
 
 .login-btn {
     margin: auto !important;
@@ -68,6 +102,10 @@ button, input[type="submit"], input[type="reset"] {
   width: 12px;
 }
 
+.bg-light {
+    background-color: white !important;
+}
+
 .page-item.active .page-link {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
@@ -75,6 +113,7 @@ button, input[type="submit"], input[type="reset"] {
 
 .page-link {
   color: #4ADAC4;
+  border-color: #4ADAC4;
 }
 
 .page-link:hover {
@@ -101,6 +140,7 @@ a:hover {
 .table {
   border-left: 1px;
   border-right: 1px;
+  padding-top: 25px;
 }
 
 #btn_search {
@@ -179,10 +219,22 @@ p.time {
 .forum-menu {
   display: inline;
   padding: 0;
+  margin-left: 0.75rem;
 }
 
 .menu-space {
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 18px;
+  position: fixed;
+  display: none;
+  background: white;
+  width: 100%;
+}
+
+.navbar {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  z-index: 1000;
 }
 
 li {
@@ -208,9 +260,14 @@ li {
   padding-top: 10px;
 }
 
+
+/* #navigation {
+  position: fixed;
+} */
+
 .menu-nav {
   color: #A6A6A5;
-  font-size: 22px;
+  font-size: 18px;
 /*   padding: 0.5rem; */
 }
 
@@ -280,6 +337,11 @@ li {
   font-weight: bold;
 }
 
+a.nav-link {
+  font-weight: 700;
+}
+
+
 .bold-navtext {
   padding-bottom: 3px; 
   border-bottom: 3px solid #4ADAC4; 
@@ -310,6 +372,10 @@ li {
   margin-bottom: 5px;
 }
 
+.searchbar {
+  height: 38px;
+}
+
 .input-label {
   display: block;
   font-weight: 600;
@@ -326,16 +392,83 @@ li {
   margin-right: auto;
 }
 
+/* input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red; */
+
 .signup-box {
   width: 360px;
 }
+
+
+/* #corner-img {
+  position: relative;
+  float: right;
+} */
+
+.answer-dark {
+  background-color: #F9F9F9;
+  display: inline-block;
+  width: calc(100% - 20px);
+/*   position: relative; */
+/*   float: right; */
+}
+
+#page-link-before {
+  position: relative;
+  float: left;
+  padding: 0.375rem 0.75rem;
+  display: block;
+   text-decoration: none;
+  background-color: #fff;
+/*   border: 1px solid #4ADAC4; */
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: 4px;
+}
+
+#page-link-next {
+  position: relative;
+  float: right;
+  padding: 0.375rem 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+/*   border: 1px solid #4ADAC4; */
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-radius: 4px;
+}
+
+ul.pagination{
+  margin-bottom: 5rem;
+}
+
+/* .comments {
+  width: calc(80% - 55px);
+  float: right;
+  position: relative;
+} */
+
 
 .main-logo {
   background: url("img/main-logo.svg") no-repeat;
 }
 
+.align-right {
+  position: relative;
+  float: right;
+}
+
+
+.my-3-custom {
+  margin-top: 1rem!important;
+  margin-bottom: 0;
+  position: relative;
+  float: right;
+}
+
 @media only screen and (max-device-width: 480px) {
-  
+
 .navbar-brand {
   margin-left: 7px;
 }
@@ -356,9 +489,6 @@ td {
     border-bottom: none !important;
 }
 
-.bg-light {
-    background-color: transparent !important;
-}
 
 .btn-primary-main {
   bottom: 30px;
@@ -369,5 +499,32 @@ td {
   font-weight: 700;
   color: #373737;
 }
+
+.menu-space {
+  display: block;
+}
+
+.navbar {
+  padding-bottom: 1rem;
+/*   padding-top: 1rem; */
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.nav-item{
+  display: none;
+}
+
+ul.pagination{
+  margin-bottom: 3rem;
+}
+
+.table {
+  padding-top: 50px;
+}
+
+
 
 }
