@@ -1,12 +1,7 @@
 {% extends 'base.html' %}
 {% load pybo_filter %}
 {% block content %}
-{% include "navbar.html" %}
-<div class="container my-3">
-
-<!--         <div class="col-6">
-            <a href="{% url 'pybo:question_create' %}" id= "question-button" class="btn btn-primary">새 글을 작성해주세요!</a>
-        </div> -->
+{% include "navbar_free.html" %}
       <div class="menu-space">
         <ul class="forum-menu">
           <li>
@@ -18,17 +13,21 @@
           <li>
             <a class="menu-nav" href="/bu/info/">정보</a>
           </li>
+          <li>
+            <a class="menu-nav" href="/bu/pr/">홍보</a>
+          </li>
+          <li>
+            <a class="menu-nav" href="/bu/sale/">장터</a>
+          </li>
         </ul>
-  
-<!--         <div class="search-bar">
-            <div class="input-group">
-                <input type="text" id="search_kw" class="form-control" value="{{ kw|default_if_none:'' }}">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
-                </div>
-            </div>
-        </div> -->
+
       </div>
+<div class="container my-3">
+
+<!--         <div class="col-6">
+            <a href="{% url 'pybo:question_create' %}" id= "question-button" class="btn btn-primary">새 글을 작성해주세요!</a>
+        </div> -->
+
 
     <table class="table">
         <thead>
@@ -72,21 +71,21 @@
         </tbody>
     </table>
     <!-- 페이징처리 시작 -->
-    <ul class="pagination justify-content-center">
+    <ul class="pagination">
         <!-- 이전페이지 -->
         {% if question_list.has_previous %}
         <li class="page-item">
-            <a class="page-link" data-page="{{ question_list.previous_page_number }}"
-               href="javascript:void(0)">이전</a>
+            <a class="page-link" data-page="{{ question_list.previous_page_number }}" id="page-link-before"
+               href="?kw=&page={{ question_list.previous_page_number }}">이전</a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true"
+            <a class="page-link" tabindex="-1" aria-disabled="true" id="page-link-before"
                href="javascript:void(0)">이전</a>
         </li>
         {% endif %}
         <!-- 페이지리스트 -->
-        {% for page_number in question_list.paginator.page_range %}
+<!--         {% for page_number in question_list.paginator.page_range %}
         {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
         {% if page_number == question_list.number %}
         <li class="page-item active" aria-current="page">
@@ -100,26 +99,30 @@
         </li>
         {% endif %}
         {% endif %}
-        {% endfor %}
+        {% endfor %} -->
         <!-- 다음페이지 -->
         {% if question_list.has_next %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.next_page_number }}"
-               href="javascript:void(0)">다음</a>
+               href="?kw=&page={{ question_list.next_page_number }}" id="page-link-next">다음</a>
         </li>
         {% else %}
         <li class="page-item disabled">
             <a class="page-link" tabindex="-1" aria-disabled="true"
-               href="javascript:void(0)">다음</a>
+               href="javascript:void(0)" id="page-link-next">다음</a>
         </li>
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
+  
+<div class="outer"><a href="{% url 'pybo:question_create' %}" id="question-button" class="btn btn-primary-main"><img src="/static/img/write.svg">&nbsp;&nbsp;&nbsp;글쓰기</a></div>
+  
 </div>
 <form id="searchForm" method="get" action="{% url 'index' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>
+
 {% endblock %}
 {% block script %}
 <script type='text/javascript'>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load pybo_filter %}
 {% block content %}
-{% include "navbar.html" %}
+{% include "navbar_blank.html" %}
 <div class="container my-3">
     <!-- message 표시 -->
     {% if messages %}
@@ -50,7 +50,7 @@
     {% for answer in question.answer_set.all %}
     <a id="answer_{{ answer.id }}"></a>
   <div class="comments">
-    <img id="corner-img" src="/static/img/corner.svg">
+<!--     <img id="corner-img" src="/static/img/corner.svg"> -->
     <div class="card my-3 answer-dark">
         <div class="card-body">
             <div class="card-text">{{ answer.content|mark }}</div>
@@ -97,6 +97,7 @@
 {% endblock %}
 {% block script %}
 <script type='text/javascript'>
+  
 const delete_elements = document.getElementsByClassName("delete");
 Array.from(delete_elements).forEach(function(element) {
     element.addEventListener('click', function() {
@@ -114,4 +115,5 @@ Array.from(recommend_elements).forEach(function(element) {
     });
 });
 </script>
+
 {% endblock %}

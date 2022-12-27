@@ -1,28 +1,41 @@
 {% extends 'base.html' %}
 {% load pybo_filter %}
 {% block content %}
-{% include "navbar.html" %}
+{% include "navbar_sale.html" %}
+      <div class="menu-space">
+        <ul class="forum-menu">
+          <li>
+            <a class="menu-nav" href="/">전체</a>
+          </li>
+          <li>
+            <a class="menu-nav" href="/bu/free/">자유</a>
+          </li>
+          <li>
+            <a class="menu-nav" href="/bu/info/">정보</a>
+          </li>
+          <li>
+            <a class="menu-nav" href="/bu/pr/">홍보</a>
+          </li>
+          <li>
+            <span class="bold-navtext"><a class="menu-nav" href="/bu/sale/" style="color: #4ADAC4; padding-bottom: 3px; font-weight: bold;">장터</a></span>
+          </li>
+        </ul>
+
+      </div>
 <div class="container my-3">
-    <div class="row my-3">
-        <div class="col-6">
-            <a href="{% url 'pybo:question_create_4' %}" id= "question-button" class="btn btn-primary">새 글을 작성해주세요!</a>
-        </div>
-        <div class="col-6">
-            <div class="input-group">
-                <input type="text" id="search_kw" class="form-control" value="{{ kw|default_if_none:'' }}">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<!--         <div class="col-6">
+            <a href="{% url 'pybo:question_create' %}" id= "question-button" class="btn btn-primary">새 글을 작성해주세요!</a>
+        </div> -->
+
+
     <table class="table">
         <thead>
         <tr id="table-color" class="text-center">
 <!--             <th>#</th> -->
-            <th style="width:65%">제목</th>
+<!--             <th style="width:65%">제목</th> -->
 <!--             <th>글쓴이</th> -->
-            <th>작성일시</th>
+<!--             <th>작성일시</th> -->
         </tr>
         </thead>
         <tbody>
@@ -35,13 +48,19 @@
             </td>
           -->
             <td class="text-start">
-                <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
-                {% if question.answer_set.count > 0 %}
-                <span class="text-success small mx-2">{{ question.answer_set.count }}</span>
-                {% endif %}
+                <p class="subject"><a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></p>
+                <p class="subtext">{{ question.content }}</p>
+                <p class="time">{{ question.create_date|date:"m/d G:i" }}</p>
             </td>
 <!--             <td>{{ question.author.username }}</td> -->
-            <td>{{ question.create_date|date:"y/m/d G:i" }}</td>
+            <td>
+                <br><br>
+                <img src="/static/img/vote.png" class="icons">
+                <span class="text-voter small">{{ question.voter.count }}</span>
+              
+                <img src="/static/img/comment.png" width="12" class="icons">
+                <span class="text-success small">{{ question.answer_set.count }}</span>
+            </td>
         </tr>
         {% endfor %}
         {% else %}
@@ -52,54 +71,58 @@
         </tbody>
     </table>
     <!-- 페이징처리 시작 -->
-    <ul class="pagination justify-content-center">
+    <ul class="pagination">
         <!-- 이전페이지 -->
         {% if question_list.has_previous %}
         <li class="page-item">
-            <a class="page-link" data-page="{{ question_list.previous_page_number }}"
+            <a class="page-link" data-page="{{ question_list.previous_page_number }}" id="page-link-before"
                href="?kw=&page={{ question_list.previous_page_number }}">이전</a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true"
+            <a class="page-link" tabindex="-1" aria-disabled="true" id="page-link-before"
                href="javascript:void(0)">이전</a>
         </li>
         {% endif %}
         <!-- 페이지리스트 -->
-        {% for page_number in question_list.paginator.page_range %}
+<!--         {% for page_number in question_list.paginator.page_range %}
         {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
         {% if page_number == question_list.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" data-page="{{ page_number }}"
-               href="?kw=&page={{ page_number }}">{{ page_number }}</a>
+               href="">{{ page_number }}</a>
         </li>
         {% else %}
         <li class="page-item">
             <a class="page-link" data-page="{{ page_number }}"
-               href="?kw=&page={{ page_number }}">{{ page_number }}</a>
+               href="javascript:void(0)">{{ page_number }}</a>
         </li>
         {% endif %}
         {% endif %}
-        {% endfor %}
+        {% endfor %} -->
         <!-- 다음페이지 -->
         {% if question_list.has_next %}
         <li class="page-item">
             <a class="page-link" data-page="{{ question_list.next_page_number }}"
-               href="?kw=&page={{ question_list.next_page_number }}">다음</a>
+               href="?kw=&page={{ question_list.next_page_number }}" id="page-link-next">다음</a>
         </li>
         {% else %}
         <li class="page-item disabled">
             <a class="page-link" tabindex="-1" aria-disabled="true"
-               href="javascript:void(0)">다음</a>
+               href="javascript:void(0)" id="page-link-next">다음</a>
         </li>
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
+  
+<div class="outer"><a href="question/create/" id="question-button" class="btn btn-primary-main"><img src="/static/img/write.svg">&nbsp;&nbsp;&nbsp;글쓰기</a></div>
+  
 </div>
 <form id="searchForm" method="get" action="{% url 'index' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>
+
 {% endblock %}
 {% block script %}
 <script type='text/javascript'>

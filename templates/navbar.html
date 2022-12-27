@@ -8,7 +8,7 @@
           {% endif %}
         </a>
         {% if user.is_authenticated %}
-        <button class="navbar-toggler" type="button"
+<!--         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
@@ -16,7 +16,7 @@
                 aria-label="Toggle navigation">
             
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         {% endif %}
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -66,11 +66,35 @@
                 <li class="nav-item">
                 <a class="nav-link" href="/bu/sale">장터게시판</a>
                 </li>
-                <li class="nav-item">
+<!--                 <li class="nav-item">
                 <a class="nav-link" href="{% url 'common:logout' %}" style="font-weight:normal; padding-right:123px;">로그아웃</a>
-                </li>
+                </li> -->
                 {% endif %}
             </ul>
         </div>
+      
+      <div class="other-menu">
+        <a href="javascript:void(0)" data-uri="{% url 'common:logout' %}" class="log-out">
+          <img src="/static/img/menu-kebab.svg" height="22" class="other-menu-item1">
+        </a>
+        <a href="/bu/search">
+          <img src="/static/img/search.svg" id="open-search" class="other-menu-item2">
+        </a>
+      </div>
+      
     </div>
 </nav>
+
+<script>
+
+const log_out = document.getElementsByClassName("log-out");
+Array.from(log_out).forEach(function(element) {
+    element.addEventListener('click', function() {
+        if(confirm("로그아웃 하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+    });
+});
+  
+</script>
+

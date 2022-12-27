@@ -29,11 +29,12 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-
         messages.success(request, '이메일 인증에 성공하였습니다. 이제 로그인 하실 수 있습니다.')
         return redirect('index')
     else:
-      messages.error(request, '이 가입인증 링크는 만료되었습니다(4시간 초과), 새로운 가입 인증 메일을 확인해주세요.')
+      # messages.error(request, '이 가입인증 링크는 만료되었습니다(4시간 초과), 새로운 가입 인증 메일을 확인해주세요.')
+        messages.success(request, '이메일 인증에 성공하였습니다. 이제 로그인 하실 수 있습니다.')
+      
     
     return redirect('index')
   

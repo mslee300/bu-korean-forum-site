@@ -110,14 +110,14 @@ def question_delete(request, question_id):
         messages.error(request, '삭제권한이 없습니다')
         return redirect('pybo:detail', question_id=question.id)
     question.delete()
-    return redirect('pybo:index')
+    return redirect('/bu/')
 
 
 @login_required(login_url='common:login')
 def question_vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.user == question.author:
-        pass
+        messages.error(request, '본인이 작성한 글은 추천할 수 없습니다')
     else:
       question.voter.add(request.user)
     return redirect('pybo:detail', question_id=question.id)

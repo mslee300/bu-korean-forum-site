@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import base_views, question_views, answer_views, info_views, pr_views, sale_views, free_views
+from .views import base_views, question_views, answer_views, info_views, pr_views, sale_views, free_views, search_views
 
 app_name = 'pybo'
 
@@ -32,4 +32,5 @@ urlpatterns = [
     path('info/', info_views.index, name='index'),
     path('pr/', pr_views.index, name='index'),
     path('sale/', sale_views.index, name='index'),
+    path('search/', search_views.index, name='index'),
 ]

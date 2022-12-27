@@ -2,6 +2,10 @@ body {
   margin-top: 57px;
 }
 
+h2 {
+  word-wrap: break-word;
+}
+
 button {
 	background: none;
 	color: inherit;
@@ -15,6 +19,7 @@ button {
 .btn-primary {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
+  margin-bottom: 5px;
 }
 
 .btn-primary:hover {
@@ -44,6 +49,45 @@ button {
   color: white;
 }
 
+.other-menu {
+  width: 111px;
+  margin-left: 32px;
+}
+
+.searchbar-control {
+    position: static;
+    height: 38px;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: block;
+    width: calc(100% - 55px) !important;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #F1F1F1;
+    background-clip: padding-box;
+    border: 1px solid #F1F1F1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.5rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.other-menu-item1 {
+  float: right;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.other-menu-item2 {
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 h2.border-bottom {
   border-bottom: none !important;
 }
@@ -55,8 +99,9 @@ h2.border-bottom {
 }
 
 #content.form-control{
-  line-height: 0.5;
+/*   line-height: 0.5; */
   border-radius: 10px;
+  height: 60px;
 }
 
 .py-2-custom {
@@ -145,22 +190,38 @@ a:hover {
 
 #btn_search {
   color: #4ADAC4;
-  border-color: #4ADAC4;
+  border-color: transparent;
 }
 
 #btn_search:hover {
   color: #ffffff;
   border-color: #4ADAC4;
   background-color: #4ADAC4;
+  border-radius: 0.5rem;
 }
 
 .navbar-brand {
   margin-left: 1rem;
 }
 
+.search-instruction {
+  text-align: center;
+  color: #A6A6A6;
+  font-weight: 650;
+  margin-top: 100px;
+}
+
+.search-container {
+  margin-top: 100px;
+}
+
+.search-large {
+  margin-botom: 10px;
+}
+
 #btn_search {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 p.text-success {
@@ -171,7 +232,7 @@ p.subject {
   margin: 0;
   padding: 0;
   overflow:hidden;
-  width: 280px;
+  width: 620px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -181,7 +242,7 @@ p.subject {
   font-size: 14px;
   margin-bottom: 5px;
   overflow:hidden;
-  width: 300px;
+  width: 620px;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-right: 0;
@@ -356,6 +417,7 @@ a.nav-link {
   margin-bottom: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  z-index: 1001;
 }
 
 .alert-success {
@@ -392,27 +454,15 @@ a.nav-link {
   margin-right: auto;
 }
 
-/* input::placeholder {
-    font-weight: bold;
-    opacity: 0.5;
-    color: red; */
-
 .signup-box {
   width: 360px;
 }
 
 
-/* #corner-img {
-  position: relative;
-  float: right;
-} */
-
 .answer-dark {
   background-color: #F9F9F9;
-  display: inline-block;
-  width: calc(100% - 20px);
-/*   position: relative; */
-/*   float: right; */
+  display: flex;
+/*   width: calc(100% - 20px); */
 }
 
 #page-link-before {
@@ -422,7 +472,6 @@ a.nav-link {
   display: block;
    text-decoration: none;
   background-color: #fff;
-/*   border: 1px solid #4ADAC4; */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   border-radius: 4px;
 }
@@ -434,7 +483,6 @@ a.nav-link {
   display: block;
   text-decoration: none;
   background-color: #fff;
-/*   border: 1px solid #4ADAC4; */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   border-radius: 4px;
 }
@@ -442,12 +490,6 @@ a.nav-link {
 ul.pagination{
   margin-bottom: 5rem;
 }
-
-/* .comments {
-  width: calc(80% - 55px);
-  float: right;
-  position: relative;
-} */
 
 
 .main-logo {
@@ -464,29 +506,84 @@ ul.pagination{
   margin-top: 1rem!important;
   margin-bottom: 0;
   position: relative;
-  float: right;
+/*   float: right; */
 }
 
-@media only screen and (max-device-width: 480px) {
+
+
+/* On screens that are 991px or less, set the background color to olive */
+@media screen and (max-width: 991px) {
+
+.menu-space {
+  display: block;
+}
+  
+.subtext {
+  width: 550px;
+}
+
+p.subject {
+  width: 550px;
+}
 
 .navbar-brand {
-  margin-left: 7px;
-}
-
-td {
-  color: #B1B5B9
-}
-
-/* .form-control-id {
-  width: 90%;
-} */
-
-.mb-3 {
-    margin-bottom: 5px !important;
+  margin-left: 0.5rem;
 }
 
 .border-bottom {
     border-bottom: none !important;
+}
+
+.table {
+  padding-top: 50px;
+}
+
+.menu-space {
+  display: block;
+}
+
+}
+
+
+/* On screens that are 767.98px or less, set the background color to olive */
+@media only screen and (max-device-width: 767.98px) {
+  
+.subtext {
+  width: 390px;
+}
+
+p.subject {
+  width: 390px;
+}
+
+}
+
+
+
+@media only screen and (max-device-width: 575.98px) {
+  
+.subtext {
+  font-size: 14px;
+  width: 340px;
+}
+
+p.subject {
+  width: 340px;
+}
+
+}
+
+
+
+@media only screen and (max-device-width: 480px) {
+  
+td {
+  color: #B1B5B9
+}
+
+
+.mb-3 {
+    margin-bottom: 5px !important;
 }
 
 
@@ -506,7 +603,6 @@ td {
 
 .navbar {
   padding-bottom: 1rem;
-/*   padding-top: 1rem; */
 }
 
 .navbar-toggler {
@@ -521,10 +617,99 @@ ul.pagination{
   margin-bottom: 3rem;
 }
 
-.table {
-  padding-top: 50px;
+.other-menu-item1 {
+  margin-right: 5px;
+}
+
+.other-menu-item2 {
+  margin-right: 20px;
+}
+
+.search-container {
+  margin-top: 75px;
+}
+
+.subtext {
+  width: 280px;
+}
+
+p.subject {
+  width: 280px;
 }
 
 
+}
+
+
+@media only screen and (max-device-width: 410px) {
+  
+.subtext {
+  width: 240px;
+}
+
+p.subject {
+  width: 240px;
+}
+
+}
+
+
+@media only screen and (max-device-width: 390px) {
+  
+.subtext {
+  width: 220px;
+}
+
+p.subject {
+  width: 220px;
+}
+
+}
+
+@media only screen and (max-device-width: 350px) {
+  
+.subtext {
+  width: 210px;
+}
+
+p.subject {
+  width: 210px;
+}
+
+}
+
+@media only screen and (max-device-width: 340px) {
+  
+.subtext {
+  width: 190px;
+}
+
+p.subject {
+  width: 190px;
+}
+
+}
+
+@media only screen and (max-device-width: 330px) {
+  
+.subtext {
+  width: 185px;
+}
+
+p.subject {
+  width: 185px;
+}
+
+}
+
+@media only screen and (max-device-width: 320px) {
+  
+.subtext {
+  width: 180px;
+}
+
+p.subject {
+  width: 180px;
+}
 
 }
