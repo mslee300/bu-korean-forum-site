@@ -16,6 +16,14 @@ button {
 	outline: inherit;
 }
 
+.answer-btn {
+  background-color: #4ADAC4;
+  border-color: #4ADAC4;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  color: #fff;
+}
+
 .special-text {
   font-weight: 600;
 }
