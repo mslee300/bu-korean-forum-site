@@ -47,11 +47,19 @@
                 {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
             </td>
           -->
+            {% if question_list.number == 1 %}
+            <td class="text-start">
+                <p class="subject"><span class="special-text"></span><a class="subject-text" href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></p>
+                <p class="subtext">{{ question.content }}</p>
+                <p class="time">{{ question.create_date|date:"m/d G:i" }}</p>
+            </td>
+            {% else %}
             <td class="text-start">
                 <p class="subject"><a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></p>
                 <p class="subtext">{{ question.content }}</p>
                 <p class="time">{{ question.create_date|date:"m/d G:i" }}</p>
             </td>
+            {% endif %}
 <!--             <td>{{ question.author.username }}</td> -->
             <td>
                 <br><br>
@@ -122,6 +130,17 @@
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
     <input type="hidden" id="page" name="page" value="{{ page }}">
 </form>
+
+<script type='text/javascript'>
+let x = document.getElementsByClassName('subject-text');
+x[0].style.fontWeight = "600";
+x[1].style.fontWeight = "600";
+let y = document.getElementsByClassName('special-text');
+y[0].innerHTML = "Pop&nbsp;&nbsp;";
+y[0].style.color = "#c62917"
+y[1].innerHTML = "Q.&nbsp;&nbsp;";
+y[1].style.color = "#4ADAC4"
+</script>
 
 {% endblock %}
 {% block script %}

@@ -22,19 +22,19 @@
 <!--             <div class="d-flex justify-content-end">
                 {% if question.modify_date %}
                 <div class="badge bg-light text-dark p-2 text-start mx-3">
-                    <div class="mb-2">modified at</div>
+                    <div class="mb-2">수정일시</div>
                     <div>{{ question.modify_date }}</div>
                 </div>
                 {% endif %}
                 <div class="badge bg-light text-dark p-2 text-start">
-                    <div class="mb-2">{{ question.author.username }}</div>
+                    <div class="mb-2">익명</div>
                     <div>{{ question.create_date }}</div>
                 </div>
             </div> -->
             <div class="my-3-custom">
                 <a href="javascript:void(0)" data-uri="{% url 'pybo:question_vote' question.id  %}"
                    class="recommend btn btn-sm btn-outline-secondary"><img src="/static/img/vote.svg">
-<!--                     <span class="badge rounded-pill bg-success">{{question.voter.count}}</span> -->
+                    <span class="text-gray">{{question.voter.count}}</span>
                 </a>
                 {% if request.user == question.author %}
                 <a href="{% url 'pybo:question_modify' question.id  %}"
@@ -66,10 +66,9 @@
                     <div>{{ answer.create_date }}</div>
                 </div>
             </div> -->
-<!--             <div class="my-3">
+            <div class="my-3-custom">
                 <a href="javascript:void(0)" data-uri="{% url 'pybo:answer_vote' answer.id  %}"
-                   class="recommend btn btn-sm btn-outline-secondary"> 추천
-                    <span class="badge rounded-pill bg-success">{{answer.voter.count}}</span>
+                   class="recommend btn btn-sm btn-outline-secondary"><img src="/static/img/vote.svg"> <span class="text-gray">{{answer.voter.count}}</span>
                 </a>
                 {% if request.user == answer.author %}
                 <a href="{% url 'pybo:answer_modify' answer.id  %}"
@@ -77,7 +76,7 @@
                 <a href="javascript:void(0)" class="delete btn btn-sm btn-outline-secondary "
                    data-uri="{% url 'pybo:answer_delete' answer.id  %}">삭제</a>
                 {% endif %}
-            </div> -->
+            </div>
         </div>
     </div>
   </div>

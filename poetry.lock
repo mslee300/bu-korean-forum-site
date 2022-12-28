@@ -47,6 +47,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-endless-pagination"
+version = "2.0"
+description = "Django pagination tools supporting Ajax, multiple and lazy pagination,\nTwitter-style and Digg-style pagination."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "importlib-metadata"
 version = "5.0.0"
 description = "Read metadata from Python packages"
@@ -115,13 +123,14 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "9d6d8248ca6438f94f874ce56ca2530926344ec982372733e9e243fe45e253d8"
+content-hash = "539f14f55631d355b534811179c7cda9f60d41c005f38e6519200fc92ed3ae92"
 
 [metadata.files]
 asgiref = []
 "backports.zoneinfo" = []
 decorators = []
 django = []
+django-endless-pagination = []
 importlib-metadata = []
 markdown = []
 six = []

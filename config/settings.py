@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [
   'lonessum-community.ithosting.repl.co',
   '13f3c8ca-5165-4b05-bb72-2cbb812ac7ee.id.repl.co',
   '10.12.15.194',
-  '10.22.0.59'
+  '10.22.0.59',
+  '10.32.0.43'
 ]
 
 # Application definition

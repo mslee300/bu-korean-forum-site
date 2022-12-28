@@ -10,6 +10,7 @@ Django = "^4.1.2"
 Markdown = "^3.4.1"
 decorators = "^2.0.7"
 six = "^1.16.0"
+django-endless-pagination = "^2.0"
 
 [tool.poetry.dev-dependencies]
 

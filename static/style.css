@@ -16,15 +16,21 @@ button {
 	outline: inherit;
 }
 
+.special-text {
+  font-weight: 600;
+}
+
 .btn-primary {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
   margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 .btn-primary:hover {
   background-color: #4ADAC4;
   border-color: #4ADAC4;
+  border-radius: 10px;
 }
 
 .btn-primary-main {
@@ -138,7 +144,7 @@ h2.border-bottom {
     font-size: 1rem;
     border-radius: 0.25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    width: 360px;
+    width: 330px;
     display: block;
 }
 
@@ -334,7 +340,7 @@ li {
 
 .form-control-id {
     display: block;
-    width: 360px;
+    width: 330px;
     padding: 0.4rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -366,7 +372,7 @@ li {
 
 .intro-logo {
   margin-bottom: 15px;
-  width: 360px;
+  width: 330px;
   height: 60px;
   background: url("img/intro-logo.svg") no-repeat;
   margin-left: auto;
@@ -375,7 +381,7 @@ li {
 
 .intro-logo-signup {
   margin-bottom: 15px;
-  width: 360px;
+  width: 330px;
   height: 60px;
   background: url("img/intro-logo-signup.svg") no-repeat;
   margin-left: auto;
@@ -448,7 +454,7 @@ a.nav-link {
 .mb-3 p {
   margin: 0;
   padding: 0;
-  width: 360px;
+  width: 330px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -507,6 +513,10 @@ ul.pagination{
   margin-bottom: 0;
   position: relative;
 /*   float: right; */
+}
+
+.text-gray {
+  color: #A5A6A6;
 }
 
 

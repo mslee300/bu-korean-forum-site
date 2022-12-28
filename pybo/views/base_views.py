@@ -6,6 +6,7 @@ from pybo.models import Question
 
 from django.contrib.auth.decorators import login_required
 
+
 typefield = 'free'
 
 @login_required(login_url='common:login')
@@ -13,11 +14,33 @@ def index(request):
     page = request.GET.get('page', '1')  # 페이지
     kw = request.GET.get('kw', '')  # 검색어
     question_list = Question.objects.order_by('-create_date')
-  
-    # question_list = question_list.filter(
-    #   Q(type__icontains=typefield) # 게시글 타입이 'free'인지 확인
-    # ).distinct()
-  
+
+    # Turn into List
+    question_list = list(question_list)
+
+    # Get most popular post
+    question_obj = question_list
+    max_obj = question_obj[0]
+    for obj in question_obj:
+      if obj.voter.count() > max_obj.voter.count():
+        max_obj = obj
+
+    # Get most commented post
+    question_obj2 = question_list
+    max_obj2 = question_obj2[0]
+    for obj in question_obj2:
+      if obj.answer_set.count() > max_obj2.answer_set.count():
+        max_obj2 = obj
+
+    # Send two items to front
+    question_list.remove(max_obj2)
+    if max_obj in question_list:
+      question_list.remove(max_obj)
+      question_list.insert(0, max_obj2)
+      question_list.insert(0, max_obj)
+    else:
+      question_list.insert(0, max_obj2)
+
     if kw:
         question_list = Question.objects.order_by('-create_date')
         question_list = question_list.filter(
