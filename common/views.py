@@ -50,9 +50,9 @@ def activateEmail(request, user, to_email):
     })
     email = EmailMessage(mail_subject, message, to=[to_email])
     if email.send():
-        messages.success(request, f'{user}님, {to_email}로 인증메일이 발송되었습니다. 이메일을 확인해주세요.')
+        messages.success(request, f'{user}님, {to_email}으로 인증이 완료되었습니다. 유효하지 않은 이메일 확인시 탈퇴조치 될 수 있습니다.')
     else:
-        messages.error(request, f'메일을 {to_email}에 전송하는 중에 일시적인 문제가 발생했습니다. 운영자에게 문의해주세요')
+        messages.error(request, f'{to_email}로 인증 중 일시적인 문제가 발생했습니다. 운영자에게 문의해주세요.')
 
 
 def signup(request):
@@ -60,7 +60,7 @@ def signup(request):
         form = UserForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.is_active = False
+            user.is_active = True
             user.save()
             activateEmail(request, user, form.cleaned_data.get('email'))
             # username = form.cleaned_data.get('username')
