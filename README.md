@@ -16,7 +16,7 @@ Studying abroad in an unfamiliar place can feel tough sometimes. LoneTalk is an 
 **Available for both desktop and mobile.**
 
 <p align="center">
-  <img src = "https://user-images.githubusercontent.com/55467050/209973896-e81c2373-c09a-424c-8ea0-5b46af0f52c9.png](https://user-images.githubusercontent.com/55467050/224001880-25de3c24-d196-4305-b0f1-60fe89398f23.png" width=700>
+  <img src = "https://user-images.githubusercontent.com/55467050/224001880-25de3c24-d196-4305-b0f1-60fe89398f23.png" width=700>
 </p>
 
 ## Feedback
