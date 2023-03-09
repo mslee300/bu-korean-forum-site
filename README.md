@@ -1,7 +1,7 @@
 <h1 align="center"> LoneTalk </h1> <br>
 <p align="center">
-  <a href="https://gitpoint.co/">
-<img width="1200" alt="Screen Shot 2023-03-09 at 5 33 56 AM" src="https://user-images.githubusercontent.com/55467050/223998360-979a5674-ea44-440f-9645-56204bb0f139.png">
+  <a href="https://lonetalk.com/">
+<img width="1200" alt="Screen Shot 2023-03-09 at 5 33 56 AM" src="https://user-images.githubusercontent.com/55467050/223999461-ae3b3ec9-cf5c-4b34-9705-846512bb8469.png">
   </a>
 </p>
 
