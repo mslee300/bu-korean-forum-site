@@ -5,6 +5,9 @@
   </a>
 </p>
 
+<p align="center">
+  Reddit for Korean international students.
+</p>
 
 ## Introduction
 
