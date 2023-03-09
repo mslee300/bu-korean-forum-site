@@ -1,10 +1,9 @@
-<h1 align="center"> Stocknews AI </h1> <br>
+<h1 align="center"> LoneTalk </h1> <br>
 <p align="center">
   <a href="https://gitpoint.co/">
-<img src="https://user-images.githubusercontent.com/55467050/209973561-47dcc50c-b31e-4bce-9492-36b23e6036c8.png" width="700">
+<img width="700" alt="Screen Shot 2023-03-09 at 5 33 56 AM" src="https://user-images.githubusercontent.com/55467050/223998360-979a5674-ea44-440f-9645-56204bb0f139.png">
   </a>
 </p>
-
 
 
 ## Introduction
